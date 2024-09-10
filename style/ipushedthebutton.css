@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input {
+    padding-left: 18px;
+    background-color: #202020;
+    height: 5vh;
+    width: clamp(200px, 17vw, 1000px);
+}
+
+
+
+#prompt {
+    position: absolute;
+    left: 60px;
+    top: 41px;
+
+    font-size: 18px;
+    max-width: 300px;
+}
+
+
+#prompt,
+#prompt > #title,
+#prompt > #morse {
+    font-family: "europa";
+    font-weight: 100;
+    font-style: bold;
+    font-size: 12pt;
+    max-width: 300px;
+    letter-spacing: 0em;
+}
+
+#prompt > #morse {
+    font-family: sans-serif;
+    font-size: 11pt;
+}
+
+#prompt > #title {
+    letter-spacing: .14em;
+    font-family: "freight-sans-pro";
+    font-weight: 100;
+    font-size: 20px;
+}
+
+#prompt > #desc {
+    letter-spacing: .08em;
+    font-size: 13px;
+    color: #a0a0a0;
+}

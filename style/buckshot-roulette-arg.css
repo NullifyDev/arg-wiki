@@ -1,2 +1,598 @@
 @import url("base.css");
+@import url('fontimport.css');
 
+* {
+    cursor:default;
+}
+
+:root {
+    --l0-bg-color: #000000;
+    /* --l1-bg-color: #0a0a0a; */
+    /* --l1-bg-color: #090909; */
+    --l1-bg-color: #0d0d0d;
+    --l2-bg-color: #101010;
+    --l3-bg-color: #171717;
+    --l4-bg-color: #181818;
+    --l5-bg-color: #303030;
+    --main-text-color: #ffffff;
+    --accent-color:#ff8c00;
+    --accent-color-selected: #ffb760;
+}
+
+#dropdown > #item > #buckshot {
+    color: var(--accent-color-selected);
+}
+
+#alert {
+    padding: 7px;
+    color: white;
+    text-align: center;
+    background-color: var(--accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#alert-msg {
+    color: var(--l0-bg-color);
+    background-color: transparent;
+    font-size: clamp(4pt, 12pt, 24pt);
+}
+
+#closebtn {
+    margin-left: 15px;
+    color: var(--l0-bg-color);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body {
+    background-color: var(--l0-bg-color);
+}
+
+#pwd {
+    margin-bottom: 2vw;
+    margin-top: clamp(2pt, 200%, 48pt);
+    font-size: clamp(2pt, 200%, 48pt);
+}
+
+#pwd > #title{
+    display:inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+
+#pwd > #status {
+    display:inline-block;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f00;
+}
+#pwd > #hidden {
+    display:inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #300000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#search {
+    border: none;
+    background-color: #303030;
+    color: white;
+    border-radius: 3px;
+    outline: 0;
+    font-family: "Red Hat Display";
+    font-size: clamp(2pt, 1vw, 96pt);
+    padding-left: 10px;
+    height: 3vh;
+}
+
+#search::placeholder {
+    color: #a0a0a0;
+    font-family: "Red Hat Display";
+    font-size: clamp(2pt, 1vw, 96pt);
+}
+
+#search::placeholder {
+    color: #a0a0a0;
+    font-family: "Red Hat Display";
+    font-size: clamp(2pt, 1vw, 96pt);
+}
+
+
+#header > #search {
+    position: absolute;
+    width: 14%;
+    right: 10px;
+    /* margin-bottom: 10vh; */
+}
+
+#header > #search:focus {
+    right: 15px;
+    color: #a0a0a0;
+    font-family: "Red Hat Display";
+    font-size: clamp(2pt, 1vw, 96pt);
+}
+
+#main > #search {
+    width: 20vw;
+    height: 5vh;
+}
+
+#main > #search:focus {
+    width: 21vw;
+    height: 4vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+#scrollDesc {
+    position: absolute;
+    bottom: 3vh;
+    font-family: "Red Hat Display";
+    font-size: 25pt;
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+#alert {
+    padding: 7px;
+    color: white;
+    text-align: center;
+    background-color: var(--accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#alert-msg {
+    color: var(--l0-bg-color);
+    background-color: transparent;
+    font-size: clamp(4pt, 12pt, 24pt);
+}
+
+#closebtn {
+    margin-left: 15px;
+    color: var(--l0-bg-color);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+#closebtn:hover {
+    color: var(--l0-bg-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    border: transparent;
+    text-align: center;
+    margin: 2px;
+    min-width: 1vw;
+    cursor:pointer;
+}
+
+#header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--l4-bg-color);
+    font-family: "Helvetica World";
+    font-size: 18pt;
+    padding: 5px;
+
+
+    flex-grow: 1;
+    display: flex;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+
+#buttons {
+    flex-grow: 1;
+    display: flex;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: clamp(10pt, 16pt, 20pt);
+    background-color: transparent;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+dropdown {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown > #content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+#dropdown:hover > #content {
+    background-color: var(--l2-bg-color);
+    display: block;
+
+}
+
+#dropdown > #item {
+    background-color: var(--l1-bg-color);
+    color: var(--main-text-color);
+}
+
+#headerbutton {
+    padding: 0px 3vw;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+#titlelogo {
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+    height: 15vw;
+}
+
+#hometitle {
+    padding: 0;
+    height: 5vh;
+    width: 65vw;
+    display: flex;
+    font-size: clamp(2pt, 300%, 48pt);
+    font-weight: 800;
+    min-width: 340px;
+    max-width: 1025px;
+    text-align: center;
+    align-items: center;
+    margin: 1vw 0 1vw 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--l0-bg-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#homedescription {
+    font-size: clamp(2pt, 100%, 48pt);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#contents {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    align-content: center;
+    justify-content: center;
+    height: 40vh;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    margin-bottom: clamp(20px, 15vh, 500px);
+}
+
+
+
+.btn-text {
+    text-decoration: none;
+    display: flex; 
+    padding: 10px; 
+    border: none; 
+    color: white; 
+    cursor: pointer;
+}
+
+#left, #right {
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%
+}
+
+#left  > button,
+#right > button {
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    font-size: clamp(6pt, 11pt, 24pt);
+    width: 100%;
+    height: clamp(25px, 50px, 500px);<div id="header">
+    <a id="headerbutton" href="">HOME</a>
+    <dropdown id="dropdown">
+        <span id="headerbutton">ACTIVE ARGS</span>
+        <div id="content">
+            <a id="item" class="buckshot">Buckshot Roulette</a>
+        </div>
+    </dropdown>
+    <a id="headerbutton">ABOUT US</a>
+    <a id="headerbutton">ARCHIVES</a>
+    <input id="search" type="text" placeholder="Search" />
+</div>
+}
+
+#container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    height: 40%;
+    font-size: clamp(8pt, 14pt, 20pt);
+    font-family:'Courier New', Courier, monospace;
+    width: clamp(25px, 750px, 1000px);
+}   
+
+section {
+    position: relative;
+    height: 100vh;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn-text {
+    font-weight: 300;
+    font-size: clamp(8pt, 16pt, 24pt);
+}
+
+button {
+    background-color: var(--accent-color);
+    border: transparent;
+    padding: 10px;
+    min-width: 1vw;
+    justify-content: center;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#CR {
+    color: #3d3d3d;
+    position: relative;
+    top: 1vh;
+    left: 0.5vw;
+    font-size: 1vw;
+    font-family: "Futura PT";
+    font-weight: 400;
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
+
+
+
+
+/* ===============================
+        ACTS AND PROGRESS
+=============================== */
+
+#act,
+#acts,
+#acts > #summary,
+#acts > #timeline {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+
+}
+
+#act {
+    text-align: center;
+    max-width: 100%;
+    min-width: clamp(175px, 10vw, 30vw); 
+}
+
+#act > #title {
+    font-size: clamp(4pt, 24pt, 96pt);
+    font-weight: 1000;
+    color: var(--accent-color);
+}
+
+#act > #desc {
+    text-align: center;
+    font-size: 80%;
+}
+#act > #readmore {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 15px;
+    font-size: clamp(8pt, 14pt, 20pt);
+}
+
+#readmore:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#acts > #preface,
+#act-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    height: 40%;
+    font-family:'Courier New', Courier, monospace;
+    width: clamp(25px, 750px, 1000px);
+
+    margin-top: 0;
+    margin: 50px 0;
+}
+
+#acts > #preface {
+    width: clamp(25px, 500px, 1000px);
+}
+
+#act-container > #act {
+    height: 100%;
+}
+
+#container > #act {
+    margin: 0 50px;
+    width: clamp(25px, 26vw, 500px);
+}
+
+
+
+
+/* ===============================
+          DISCORD INVITE
+=============================== */
+
+/* #container {
+    height: clamp(4vw, 20vw, 50vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+#di-container{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: clamp(100px, 250px, 500px);
+    font-size: clamp(8pt, 14pt, 20pt);
+    font-family:'Courier New', Courier, monospace;
+}
+
+#invites {
+    display: flex;
+    flex-direction: column;
+    height: 5vh;
+    align-items: center;
+    margin-top: clamp(50px, 20vh, 500px);
+    font-family: "Futura PT";
+}
+
+#invites > h1#title {
+    margin-bottom: clamp(50px, 5vh, 500px);
+}
+
+#di-contents {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    width: clamp(0.5vw, 250px, 500px,);
+    gap: 5vw;
+    margin-bottom: clamp(100px, 250px, 1000px);
+}
+#contents > #title {
+    margin-top: clamp(50px, 15vh, 500px);
+}
+
+
+#di {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    justify-content: center;
+    align-items: center; 
+    font-size: clamp(6pt, 16pt, 24pt);
+    width: 250px;
+    height: 100%;
+}
+
+#di > #logo {
+    margin: 0;
+    position: relative;
+    max-width: 125px;
+    z-index: 1;
+    margin-bottom: 2vh;
+}
+
+#di > #discord-widget {
+    margin-top: auto;
+}
+
+#di > #indicator {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: clamp(25px, 2.5vw, 400px);
+    z-index: 2;
+}
+
+#dev-gh {
+    cursor: pointer;
+}
+
+#di-btn {
+    margin: 0;
+    margin-top: 0;
+}
+
+#msg-hidden {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    align-content: center;
+    justify-content: center;
+}

@@ -1,7 +1,15 @@
+@import url('fontimport.css');
+
 * {
+    cursor:default;
+}
+
+
+* {
+    text-rendering: optimizeLegibility;
     padding: 0;
     margin: 0;
-    background-color: transparent;
+    background-color: black;
     color: white;
     font-family: url("rsc/fonts/a-font.woff2");
 }
