@@ -3,6 +3,11 @@
 
 * {
     cursor:default;
+    color: white;
+    z-index: 2;
+    background-color: transparent;
+    font-family: "AveriaSerifLibre";
+    font-weight: 300;
 }
 
 :root {
@@ -19,6 +24,72 @@
     --accent-color-selected: #ffb760;
 }
 
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+aligncenter2,
+aligncenter {
+    display: flex;
+    align-content: center;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+aligncenter {
+    width: fit-content;
+    margin-top: 10vh;
+}
+
+#contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    max-width: 50vw;
+}
+
+#title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    font-family: "AveriaSerifLibre";
+    font-weight: 300;
+    font-size: clamp(8pt, 25vw, 48pt);
+    font-stretch: narrower;
+    line-height: 1.5em;
+    /* margin-top: 10vh; */
+    transform: scale(100%,1);
+    height: 20vh;
+    width: 50vw;
+    margin-top: -3vh;
+    margin-bottom: 15vh;
+}
+#desc {
+    width: 50vw;
+}
+#argw {
+    position: relative;
+    height: 20vh;
+}
+#title > #stretch {
+    transform-origin: left top;
+    transform: scaleY(3);
+    margin-bottom: 11vh;
+    width: 100%;
+}
+
+/*
 #dropdown > #item > #buckshot {
     color: var(--accent-color-selected);
 }
@@ -51,31 +122,6 @@
 body {
     background-color: var(--l0-bg-color);
 }
-
-#pwd {
-    margin-bottom: 2vw;
-    margin-top: clamp(2pt, 200%, 48pt);
-    font-size: clamp(2pt, 200%, 48pt);
-}
-
-#pwd > #title{
-    display:inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
-}
-
-#pwd > #status {
-    display:inline-block;
-
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f00;
-}
-#pwd > #hidden {
-    display:inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #300000;
-}
-
 
 
 
@@ -212,7 +258,8 @@ button {
 
 #main {
     display: flex;
-    justify-content: center;
+    <body> 
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     height: 70vh;
@@ -268,14 +315,14 @@ dropdown {
 
 
 #titlelogo {
-    margin-top: 5vw;
+    margin-top: 3vw;
     margin-bottom: 3vw;
     height: 15vw;
 }
 
 #hometitle {
     padding: 0;
-    height: 5vh;
+    height: 10vh;
     width: 65vw;
     display: flex;
     font-size: clamp(2pt, 300%, 48pt);
@@ -322,4 +369,4 @@ section {
     border: none; 
     color: white; 
     cursor: pointer;
-}
+} */
