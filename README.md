@@ -6,6 +6,8 @@ This is a major reconstruction of the website. This project aims to provide oppo
 <br>
 Here are the key major differences:
 
-- Shrunk page sizes by at least and not limited to 2 to 10 times, allowing much more snappier load times, lowering user-bandwidth requirements <i>(see more over at the <u>/PageComparisons</u> folder)</i>.
-- Fixed content symmetry.
-- Improved source structure.
+- Shrunk page sizes by at least and not limited to 2 to 10 times (if not, more), allowing much more snappier load times, lowering user-bandwidth and user-device hardware requirements.
+- Renovated pages (improved/modernized looks).
+- Implemented organized source structure.
+
+If you want to see the differences between the old and new versions of each page, please head to the [`/PageComparisons`](https://github.com/NullifyDev/arg-wiki/tree/master/PageComparisons) folder.
