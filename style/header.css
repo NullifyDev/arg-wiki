@@ -1,0 +1,161 @@
+@import url("./root.css");
+
+#closebtn {
+    margin-left: 15px;
+    color: var(--l0-bg-color);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#dropdown > #item > #buckshot {
+    color: var(--accent-color-selected);
+}
+
+#closebtn:hover {
+    color: var(--l0-bg-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    border: transparent;
+    text-align: center;
+    margin: 2px;
+    min-width: 1vw;
+    cursor: pointer;
+}
+
+#header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--l2-bg-color);
+    box-shadow: 0 0 30px 30px var(--l2-bg-color);
+    font-family: 'Red Hat Display';
+    font-weight: 300;
+    font-size: 18pt;
+    padding: 5px;
+    width: 99vw;
+
+    flex-grow: 1;
+    display: flex;
+    font-weight: 200;
+    text-decoration: none;
+
+    z-index: 1;
+}
+
+#main {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+#contents {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    align-content: center;
+    justify-content: center;
+    height: 40vh;
+}
+
+#buttons {
+    flex-grow: 1;
+    display: flex;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: clamp(10pt, 16pt, 20pt);
+    background-color: transparent;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+dropdown {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown>#content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+#dropdown:hover>#content {
+    background-color: var(--l2-bg-color);
+    display: block;
+
+}
+
+#dropdown>#item {
+    background-color: var(--l1-bg-color);
+    color: var(--main-text-color);
+}
+
+#headerbutton {
+    padding: 0px 3vw;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.btn-text {
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+#search {
+    border: none;
+    background-color: var(--l4-bg-color);
+    color: white;
+    border-radius: 3px;
+    outline: 0;
+    font-size: clamp(2pt, 1vw, 96pt);
+    padding-left: 10px;
+    height: 3vh;
+}
+
+#search::placeholder {
+    color: #a0a0a0;
+    font-size: clamp(2pt, 1vw, 96pt);
+}
+
+#search::placeholder {
+    color: #a0a0a0;
+    font-size: clamp(2pt, 1vw, 96pt);
+}
+
+
+#header > #search {
+    position: absolute;
+    width: 14%;
+    right: 10px;
+    /* margin-bottom: 10vh; */
+}
+
+#header > #search:focus {
+    right: 15px;
+    color: #a0a0a0;
+    font-family: "Red Hat Display";
+    font-size: clamp(2pt, 1vw, 96pt);
+}

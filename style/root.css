@@ -1,0 +1,13 @@
+:root {
+    --l0-bg-color: #000000;
+    /* --l1-bg-color: #0a0a0a; */
+    /* --l1-bg-color: #090909; */
+    --l1-bg-color: #0d0d0d;
+    --l2-bg-color: #101010;
+    --l3-bg-color: #171717;
+    --l4-bg-color: #181818;
+    --l5-bg-color: #303030;
+    --main-text-color: #ffffff;
+    --accent-color:#ff8c00;
+    --accent-color-selected: #ffb760;
+}

@@ -2,371 +2,266 @@
 @import url('fontimport.css');
 
 * {
-    cursor:default;
-    color: white;
-    z-index: 2;
+    cursor: default;
     background-color: transparent;
-    font-family: "AveriaSerifLibre";
+    font-family: "Red Hat Display";
     font-weight: 300;
+    z-index: 1;
 }
 
 :root {
     --l0-bg-color: #000000;
-    /* --l1-bg-color: #0a0a0a; */
-    /* --l1-bg-color: #090909; */
     --l1-bg-color: #0d0d0d;
     --l2-bg-color: #101010;
     --l3-bg-color: #171717;
     --l4-bg-color: #181818;
     --l5-bg-color: #303030;
     --main-text-color: #ffffff;
-    --accent-color:#ff8c00;
+    --accent-color: #ff8c00;
     --accent-color-selected: #ffb760;
+}
+
+#CR {
+    position: absolute;
+    z-index: 2;
+    top: 1vh;
+    left: 1vh;
+    color: var(--l5-bg-color);
+    font-size: clamp(2pt, 1.25vw, 8pt);
+}
+
+#shells {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    display: flex;
+    align-content: center;
+
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+    background: black;
+    animation: moveBackground 20s linear infinite;
+    background-size: cover;
+}
+
+#desc {
+    font-family: 'Red Hat Display';
+    font-size: clamp(2pt, 3vw, 18pt);
+    width: 50vw;
 }
 
 #bg {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    width: 100vw;
     top: 0;
     left: 0;
 }
-aligncenter2,
-aligncenter {
-    display: flex;
-    align-content: center;
-    /* justify-content: center; */
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+
+#shadow {
+    position: fixed;
     height: 100vh;
+    width: 40vh;
+    background: black;
+    box-shadow: 0px 0px 200px 200px black;
 }
 
-aligncenter {
-    width: fit-content;
-    margin-top: 10vh;
-}
-
-#contents {
+alignmiddle {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-
-    max-width: 50vw;
+    flex-direction: row;
 }
 
-#title {
-    position: relative;
+#arg>#title {
     display: flex;
     flex-direction: column;
 
     font-family: "AveriaSerifLibre";
     font-weight: 300;
-    font-size: clamp(8pt, 25vw, 48pt);
-    font-stretch: narrower;
+    font-size: clamp(2pt, 3vw, 48pt);
     line-height: 1.5em;
-    /* margin-top: 10vh; */
-    transform: scale(100%,1);
-    height: 20vh;
-    width: 50vw;
-    margin-top: -3vh;
-    margin-bottom: 15vh;
-}
-#desc {
-    width: 50vw;
-}
-#argw {
-    position: relative;
-    height: 20vh;
-}
-#title > #stretch {
-    transform-origin: left top;
-    transform: scaleY(3);
-    margin-bottom: 11vh;
-    width: 100%;
-}
-
-/*
-#dropdown > #item > #buckshot {
-    color: var(--accent-color-selected);
-}
-
-#alert {
-    padding: 7px;
-    color: white;
     text-align: center;
-    background-color: var(--accent-color);
-    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
 }
 
-#alert-msg {
-    color: var(--l0-bg-color);
-    background-color: transparent;
-    font-size: clamp(4pt, 12pt, 24pt);
+#logo {
+    height: clamp(200px, 20vw, 250px);
+    width: clamp(200px, 20vw, 250px);
+    margin: 12vh 0;
 }
 
-#closebtn {
-    margin-left: 15px;
-    color: var(--l0-bg-color);
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
+
+#active-args {
+    position: relative;
+    margin-top: 12vh;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+#active-args > #title {
+    margin-top: 10vh;
+    height: auto;
+    margin-bottom: 8vh;
+    font-size: 3vw;
+    font-family: "AveriaSerifLibre";
+}
+
+#args {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw 7vw;
+    bottom: -5vw;
+    justify-items: center;
+    margin-bottom: 15vh;
+    height: 60vh;
+}
+
+#arg > *,
+#arg > #title > #stretch-vox {
     cursor: pointer;
-    transition: 0.3s;
+    font-family: "AveriaSerifLibre";
+    z-index: 3;
 }
 
-body {
-    background-color: var(--l0-bg-color);
+#arg {
+    display: flex;
+    
+    user-select: none;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: fit-content;
+    height: fit-content;
+    /* margin: 0 8vh; */
+    background: #000000;
+
+    box-shadow: 0px 0px 0px 4px var(--l4-bg-color);
+    border-radius: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-#search {
-    border: none;
-    background-color: #303030;
-    color: white;
-    border-radius: 3px;
-    outline: 0;
-    font-family: "Red Hat Display";
-    font-size: clamp(2pt, 1vw, 96pt);
-    padding-left: 10px;
-    height: 3vh;
-}
-
-#search::placeholder {
-    color: #a0a0a0;
-    font-family: "Red Hat Display";
-    font-size: clamp(2pt, 1vw, 96pt);
-}
-
-#search::placeholder {
-    color: #a0a0a0;
-    font-family: "Red Hat Display";
-    font-size: clamp(2pt, 1vw, 96pt);
-}
-
-
-#header > #search {
+#arg > #href {
     position: absolute;
-    width: 14%;
-    right: 10px;
-    /* margin-bottom: 10vh; */
+    z-index:5;
+    width: 25vw;
+    min-width: 25vh;
+    height: 15vw;
+    min-height: 15vh;
 }
 
-#header > #search:focus {
-    right: 15px;
-    color: #a0a0a0;
-    font-family: "Red Hat Display";
-    font-size: clamp(2pt, 1vw, 96pt);
+#arg>#title>#stretch {
+    transform: scaleY(3);
+    margin-top: 2vw;
+    width: fit-content;
 }
 
-#main > #search {
+#arg>#title>#stretch-vox {
+    transform: scale(2, 2);
+    margin-top: 2vw;
+    width: fit-content;
+}
+
+#arg>.q,
+#arg>#title {
+    position: absolute;
+    color: white;
+    align-items: center;
+}
+
+#arg>.q {
+    font-size: clamp(4pt, 5vw, 48pt);
+}
+
+#arg>#title,
+#arg>#title>#stretch {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    font-family: "AveriaSerifLibre";
+    cursor: pointer;
+}
+
+#arg>#preview {
+    border-radius: 10px;
+    border-color: #303030;
+    width: 25vw;
+    min-width: 25vh;
+    height: 15vw;
+    min-height: 15vh;
+
+    transition: opacity 0.25s ease-in-out;
+
+    opacity: 1;
+
+    z-index: 4;
+}
+
+#arg:hover {
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0px 0px 0px 3px var(--l3-bg-color);
+}
+
+#arg:hover>#title,
+#arg:hover>#title>#stretch {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#arg:hover>#preview {
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+    /* width: ; */
+}
+
+@media only screen and (max-width: 720px) {
+    #logo {
+        flex-direction: column;
+        font-size: clamp(4pt, 10vw, 24pt);
+        align-items: center;
+        transform: scale(100%, 1);
+        height: clamp(100px, 5vh, 175px);
+        height: clamp(75px, 25vw, 250px);
+        width:  clamp(75px, 25vw, 250px);
+        margin-bottom: 10vh;
+    }
+    #active-args {
+        top: 20vw;
+    }
+    #active-args>#title {
+        margin-top: 0;
+        height: auto;
+        margin-bottom: 8vh;
+        font-size: clamp(3vw, 5vw, 7vw);
+    }
+
+    #desc {
+        font-size: clamp(2pt, 4vw, 11pt);
+    }
+
+    #args {
+        grid-template-columns: 1fr;
+        gap: 3vh;
+    }
+}
+
+#main>#search {
     width: 20vw;
     height: 5vh;
 }
 
-#main > #search:focus {
+#main>#search:focus {
     width: 21vw;
     height: 4vh;
 }
 
-
-
-
-
-
-
-
-
-
-
-#scrollDesc {
-    position: absolute;
-    bottom: 3vh;
-    font-family: "Red Hat Display";
-    font-size: 25pt;
-    color: var(--accent-color);
-    background-color: transparent;
-}
-
-#alert {
-    padding: 7px;
-    color: white;
-    text-align: center;
-    background-color: var(--accent-color);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#alert-msg {
-    color: var(--l0-bg-color);
-    background-color: transparent;
-    font-size: clamp(4pt, 12pt, 24pt);
-}
-
-#closebtn {
-    margin-left: 15px;
-    color: var(--l0-bg-color);
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-  
-#closebtn:hover {
-    color: var(--l0-bg-color);
-}
-
-button {
-    background-color: var(--accent-color);
-    border: transparent;
-    text-align: center;
-    margin: 2px;
-    min-width: 1vw;
-    cursor:pointer;
-}
-
-#header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--l4-bg-color);
-    font-family: "Helvetica World";
-    font-size: 18pt;
-    padding: 5px;
-
-
-    flex-grow: 1;
-    display: flex;
-    font-weight: 200;
-    text-decoration: none;
-}
-
-#main {
-    display: flex;
-    <body> 
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    height: 70vh;
-}
-
-
-#buttons {
-    flex-grow: 1;
-    display: flex;
-    font-weight: 200;
-    text-decoration: none;
-    font-size: clamp(10pt, 16pt, 20pt);
-    background-color: transparent;
-    
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-dropdown {
-    background-color: transparent;
-    position: relative;
-    display: inline-block;
-}
-
-#dropdown > #content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-
-#dropdown:hover > #content {
-    background-color: var(--l2-bg-color);
-    display: block;
-
-}
-
-#dropdown > #item {
+header#header {
+    /* position: absolute; */
     background-color: var(--l1-bg-color);
-    color: var(--main-text-color);
+    box-shadow: 0 0 25px 25px var(--l1-bg-color);
+    z-index: 2;
 }
-
-#headerbutton {
-    padding: 0px 3vw;
-    cursor: pointer;
-    text-decoration: none;
-    background-color: transparent;
-}
-
-
-#titlelogo {
-    margin-top: 3vw;
-    margin-bottom: 3vw;
-    height: 15vw;
-}
-
-#hometitle {
-    padding: 0;
-    height: 10vh;
-    width: 65vw;
-    display: flex;
-    font-size: clamp(2pt, 300%, 48pt);
-    font-weight: 800;
-    min-width: 340px;
-    max-width: 1025px;
-    text-align: center;
-    align-items: center;
-    margin: 1vw 0 1vw 0;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--l0-bg-color);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#homedescription {
-    font-size: clamp(2pt, 100%, 48pt);
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-#contents {
-    width: 100%;
-    display: flex;
-    /* align-items: center; */
-    align-content: center;
-    justify-content: center;
-    height: 40vh;
-}
-
-section {
-    position: relative;
-    height: 100vh;
-    margin-bottom: clamp(20px, 15vh, 500px);
-}
-
-
-
-.btn-text {
-    text-decoration: none;
-    display: flex; 
-    padding: 10px; 
-    border: none; 
-    color: white; 
-    cursor: pointer;
-} */
